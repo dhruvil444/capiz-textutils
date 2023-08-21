@@ -29,10 +29,8 @@ function App() {
 
       <Routes>
         <Route path="/" element={<TextForm label="Hey" mode={mode} />} />
-        <Route path="about" element={<About />} />
-
+        <Route path="/about" element={<About mode={mode} />} />
       </Routes>
-      <About />
     </div>
   );
 }

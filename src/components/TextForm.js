@@ -50,13 +50,13 @@ export default function TextForm(props) {
 
                 <div className="container max-w-xs bg-slate-100 border border-slate-200 my-4 rounded-lg p-4 flex flex-col items-center justify-center dark:bg-slate-600">
                     <div className='flex my-3 '>
-                        <p className='text-slate-400 text-sm font-medium w-32 mt-2 dark:text-gray-400'>Total Words:</p> <p className='text-slate-400 text-sm font-medium w-20 mt-2 flex dark:text-white'> {text.length === 0 ? "0" : text.trim().split(/\s+/).length}</p>
+                        <p className='text-slate-400 text-sm font-medium w-32 mt-2 dark:text-gray-400'>Total Words:</p> <p className='text-slate-400 text-sm font-medium w-20 mt-2 flex dark:text-white'> {text.length === 0 ? "0" : text.split(" ").filter((element) => { return element !== "" }).length}</p>
                     </div>
                     <div className='flex my-3'>
                         <p className='text-slate-400 text-sm font-medium w-32 mt-2 dark:text-gray-400'>Total Characters:</p> <p className='text-slate-400 text-sm font-medium w-20 mt-2 flex dark:text-white'>{text.length}</p>
                     </div>
                     <div className='flex my-3'>
-                        <p className='text-slate-400 text-sm font-medium w-32 mt-2 dark:text-gray-400'>Total Reading time:</p> <p className='text-slate-400 text-sm font-medium w-20 mt-2 flex dark:text-white'>{text.split(' ').length * 0.008} Min</p>
+                        <p className='text-slate-400 text-sm font-medium w-32 mt-2 dark:text-gray-400'>Total Reading time:</p> <p className='text-slate-400 text-sm font-medium w-20 mt-2 flex dark:text-white'>{text.split(" ").filter((element) => { return element !== "" }).length * 0.008} Min</p>
                     </div>
                 </div>
             </div>

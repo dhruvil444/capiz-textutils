@@ -1,14 +1,18 @@
 import React from 'react'
-import { Link } from "react-router-dom";
 
 // import { DefaultAccordion } from './Accordion'
 
-function About() {
+function About(props) {
+
+
+
     return (
         <>
-            <Link to="/">Click to view our about page</Link>
-            <Link to="contact">Click to view our contact page</Link>
-            {/* <DefaultAccordion /> */}
+            <div className={`flex justify-center items-center my-auto h-screen ${props.mode && "dark"}`}>
+
+                <h1 className="font-bold text-4xl dark:text-white">Will Update Soon!</h1>
+            </div>
+
         </>
     )
 }

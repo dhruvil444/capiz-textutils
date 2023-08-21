@@ -1,6 +1,7 @@
 import React from 'react'
-import logo from '../bootstrap-logo-black.svg'
+// import logo from '../bootstrap-logo-black.svg'
 import PropTypes from 'prop-types'
+import { Link } from "react-router-dom";
 
 export default function Navbar(props) {
     // const brand = "../../public/brand.png";
@@ -8,19 +9,25 @@ export default function Navbar(props) {
         <header className=" brand sticky top-0 z-10 text-white brand shadow-lg">
             <section className="max-w-4xl mx-auto p-4 flex items-center justify-between">
                 <div className='flex items-center'>
-                    <img src={logo} alt="" className='w-10 me-2' /> <h2>{props.title}</h2>
+                    <Link to="/"><h3 className='font-bold text-xl me-2'>Capiz</h3></Link>
+
+                    {/* <img src={logo} alt="" className='w-10 me-2' /> <h2>{props.title}</h2> */}
                     <div className="links">
-                        <a href="/">Docs</a><a href="/">Examples</a><a href="/">Icons</a><a href="/">Themes</a><a href="/">Blog</a></div>
+
+                        <Link to="/" className='brand'>Home</Link>
+                        <Link to="about" className='brand'>About</Link>
+                        {/* <a href="/">Examples</a><a href="/">Icons</a><a href="/">Themes</a><a href="/">Blog</a> */}
+                    </div>
                 </div>
                 {/* Search Module */}
-                <div>
+                {/* <div>
                     <form>
                         <div className="relative">
                             <div className="absolute inset-y-0 pl-2 left-0 items-center justify-center flex">
                                 <svg width="20" height="20" class="DocSearch-Search-Icon" viewBox="0 0 20 20"><path d="M14.386 14.386l4.0877 4.0877-4.0877-4.0877c-2.9418 2.9419-7.7115 2.9419-10.6533 0-2.9419-2.9418-2.9419-7.7115 0-10.6533 2.9418-2.9419 7.7115-2.9419 10.6533 0 2.9419 2.9418 2.9419 7.7115 0 10.6533z" stroke="currentColor" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-                                {/* <svg className=" w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                                <svg className=" w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
                                     <path fill='white' stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
-                                </svg> */}
+                                </svg>
                             </div>
 
                             <label className="flex">
@@ -28,7 +35,7 @@ export default function Navbar(props) {
                             </label>
                         </div>
                     </form>
-                </div>
+                </div> */}
                 {/*Social Handle Dark Mode Handler*/}
                 <button onClick={props.modeToogle}>
                     <div>
