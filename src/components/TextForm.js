@@ -35,17 +35,17 @@ export default function TextForm(props) {
     return (
         <div className={`${props.mode && 'dark'
             }`}>
-            <div className={`container mx-auto mt-6 flex flex-col items-center `}>
+            <div className={`container xl:mx-auto  sm:mx-0  p-5 sm:px-6 mt-6 sm:w-screen flex flex-col items-center `}>
                 <label htmlFor="message" className="block mb-2 text-md font-medium text-gray-900 dark:text-white">{props.text}</label>
                 <textarea id="message" rows="16" className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-200 focus:ring-blue-500 focus:border-cyan-400 dark:bg-gray-700  dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" value={text} onChange={onChangeHandler} placeholder="Write your text here..."></textarea>
-                <div>
-                    <button type="button" onClick={onUpClick} className="py-2.5 my-4 px-5 mr-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">Convert to Uppercase</button>
-                    <button type="button" onClick={onLowClick} className="py-2.5 my-4 px-5 mr-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">Convert to Lowercase</button>
-                    <button type="button" onClick={onCapitaliseClick} className="py-2.5 my-4 px-5 mr-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">Convert to Capitalise</button>
+                <div className=''>
+                    <button type="button" onClick={onUpClick} className="md:w-auto w-full  py-2.5 my-3 md:my-4 px-5 md:mr-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">Convert to Uppercase</button>
+                    <button type="button" onClick={onLowClick} className="md:w-auto w-full  py-2.5 my-3 md:my-4 px-5 md:mr-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">Convert to Lowercase</button>
+                    <button type="button" onClick={onCapitaliseClick} className=" md:w-auto w-full  py-2.5 my-3 md:my-4 px-5 md:mr-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">Convert to Capitalise</button>
 
                 </div>
             </div>
-            <div className="container mx-auto my-5 flex flex-col items-center">
+            <div className="container w-full mx-auto my-5 px-4 flex flex-col items-center">
                 <h2 className='font-medium text-gray-900 dark:text-white'>Your Text Summary</h2>
 
                 <div className="container max-w-xs bg-slate-100 border border-slate-200 my-4 rounded-lg p-4 flex flex-col items-center justify-center dark:bg-slate-600">
@@ -56,7 +56,7 @@ export default function TextForm(props) {
                         <p className='text-slate-400 text-sm font-medium w-32 mt-2 dark:text-gray-400'>Total Characters:</p> <p className='text-slate-400 text-sm font-medium w-20 mt-2 flex dark:text-white'>{text.length}</p>
                     </div>
                     <div className='flex my-3'>
-                        <p className='text-slate-400 text-sm font-medium w-32 mt-2 dark:text-gray-400'>Total Reading time:</p> <p className='text-slate-400 text-sm font-medium w-20 mt-2 flex dark:text-white'>{text.split(" ").filter((element) => { return element !== "" }).length * 0.008} Min</p>
+                        <p className='text-slate-400 text-sm font-medium w-32 mt-2 dark:text-gray-400'>Total Reading time:</p> <p className='text-slate-400 text-sm font-medium w-20 mt-2 flex dark:text-white'>{(text.split(" ").filter((element) => { return element !== "" }).length * 0.008).toFixed(2)} Min</p>
                     </div>
                 </div>
             </div>
